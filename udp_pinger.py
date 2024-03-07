@@ -40,7 +40,7 @@ try:
             data, server = client_soc.recvfrom(data_size + 4 + 1)
             b = datetime.datetime.now()
             c = b - a
-            print(f"{len(data)} bytes from {server_ip}: seq={i} rtt={c.seconds() / 1000} ms")
+            print(f"{len(data)} bytes from {server_ip}: seq={i} rtt={c.seconds / 1000} ms")
             msg_count += 1
         except TimeoutError:
             print("request timeout for icmp_seq", i)
